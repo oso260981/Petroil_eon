@@ -18,7 +18,7 @@ view: vis_ventas {
       select *
       from (
         select nb_cliente,sum(cantidadLitros)
-        from `sipp-app.Tableros.Vis_Ventas`
+        from `eon-internal-bigquery.POC.petroil2`
         where nb_TipoFilial="NO Filial venta" and nb_cliente !="CLIENTES PUBLICO EN GENERAL " and nb_FamiliaProducto in ("Asfaltos","Diesel","Combustoleos","Lubricantes","IFO","Gasolinas")
         and ((( CAST(fh_movimiento AS TIMESTAMP)  ) >= (TIMESTAMP({% date_start created_date %})) AND ( CAST(fh_movimiento AS TIMESTAMP)  ) < (TIMESTAMP({% date_end created_date %}))))
         group by nb_cliente
@@ -36,7 +36,7 @@ view: vis_ventas {
       select *
       from (
         select nb_cliente,sum(cantidadLitros)
-        from `sipp-app.Tableros.Vis_Ventas`
+        from `eon-internal-bigquery.POC.petroil2`
         where nb_TipoFilial="NO Filial venta" and nb_cliente !="CLIENTES PUBLICO EN GENERAL " and nb_FamiliaProducto in ("Asfaltos","Diesel","Combustoleos","Lubricantes","IFO","Gasolinas")
         and ((( CAST(fh_movimiento AS TIMESTAMP)  ) >= (TIMESTAMP({% date_start created_date %})) AND ( CAST(fh_movimiento AS TIMESTAMP)  ) < (TIMESTAMP({% date_end created_date %}))))
         group by nb_cliente
