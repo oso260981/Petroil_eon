@@ -19,7 +19,7 @@ persist_with: petroil_default_datagroup
 explore: usuario_petroil {
 
 
-  sql_always_where: ${usuario_petroil.usuario}='{{ _user_attributes['email'] }}' ;;
+#  sql_always_where: ${usuario_petroil.usuario}='{{ _user_attributes['email'] }}' ;;
 
   join: vis_ventas {
     type: left_outer
